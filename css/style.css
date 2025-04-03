@@ -1,0 +1,110 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family:Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+img{
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+  } 
+
+.label{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid{
+	display: grid;
+	grid-template-columns: 95%;
+	justify-content: space-evenly;
+	row-gap: 10px;
+    text-align: center;
+}
+
+.grid img{
+	width: 100%;
+}
+
+@media screen and (min-width: 772px) { /* Two column grid, border radius on the figures to create a circular shape, last figure to take up both columns */
+    div{
+        width: 100%;
+        background-color: green;
+    }
+
+    img{
+        width: 30%;
+        max-height: fit-content;
+        border-radius: 70%;
+        
+    }
+
+    .grid{
+        grid-template-columns: 45% 45%;
+        align-items: center;
+    }
+
+    .grid figure:nth-child(9n){
+        grid-column: span 2 ;
+    }
+    
+}
+
+@media screen and (min-width: 992px){ /* Set every third figure to take up both columns, remove the border radius from all of the figures */
+    div{
+        background-color: red;
+    }
+
+    img{
+        border-radius: 0%;
+        max-height: fit-content;
+    }
+
+    .grid figure:nth-child(3n+3){
+        grid-column: span 2 ;
+        align-items: center;
+    }
+    
+} 
+
+@media (prefers-reduced-motion) {/* Remove the scroll behavior */
+    html{
+        scroll-behavior: none;
+    }
+
+}
+
+@media (prefers-color-scheme: dark) { /* Create a media query for dark colors, change background of the figures to dark-color change font color to a lighter color change the border color of the figures to black */ 
+    body {
+        background-color: black;
+        color: white;
+    }
+    img{
+        border-color: black;
+        
+      } 
+
+}
+
+
+
